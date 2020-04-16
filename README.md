@@ -44,12 +44,16 @@ useLabelToggleClick and useIconToggleClick only have the two optional parameters
 
 # Usage
 
-It is likely that you only need to provide the `ShouldToggleClick` argument.  Return true to proceed with the toggle.  `ShouldToggleNonClick` is for toggling due to the keyboard ( Left arrow, Right arrow and *).  It differs to `ShouldToggleClick` in that the reason is a string rather than isExpanding.  Currently onNodeToggle is called by mui even if there is no change.  Here you can return true to proceed, false to not or you can return an array of node ids that will be the new expanded.
+It is likely that you only need to provide the `ShouldToggleClick` argument.  Return true to proceed with the toggle.
 
-The hook returns an object to be used.  Note that onNodeToggle is created with React.useCallback so too should your shouldToggleClick and shouldToggleNonClick functions.  
+`ShouldToggleNonClick` is for toggling due to the keyboard ( Left arrow, Right arrow and *).  It differs to `ShouldToggleClick` in that the reason is a string rather than isExpanding.  Currently onNodeToggle is called by mui even if there is no change.  Here you can return true to proceed, false to not or you can return an array of node ids that will be the new expanded.
+
+The hook returns an object to be used.  Note that onNodeToggle is created with React.useCallback, so too should your shouldToggleClick and shouldToggleNonClick functions.  
 
 a) Use onNodeToggle as the TreeView onNodeToggle prop.
+
 b) Use expanded as the TreeView expanded prop.
+
 c) Wrap all icons in the IconWrapper.
 
 # Example Sandbox
