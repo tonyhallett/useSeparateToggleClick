@@ -13,7 +13,7 @@ export type ToggleReason = 'expand' | 'collapse' | 'nochange';
 export type ShouldToggleNonClick = (
   reason: ToggleReason,
   newOrRemoved: Array<string>
-) => boolean;
+) => boolean | Array<string>;
 
 interface ILastIconClickManager {
   isLastIconClick(evt: React.ChangeEvent<{}>): boolean;
